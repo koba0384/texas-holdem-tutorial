@@ -206,87 +206,124 @@ HTML = r'''
   @keyframes nh-float { 0% { opacity: 0; transform: translateY(8px) scale(0.96); } 20% { opacity: 1; } 100% { opacity: 1; transform: translateY(0) scale(1); } }
   @media (max-width: 1180px) { .nh-layout { grid-template-columns: 1fr; } .nh-side-content { max-height: none; } }
   @media (max-width: 860px) {
-    .nh-root { padding: 8px 8px calc(10px + env(safe-area-inset-bottom)); }
-    .nh-header { margin-bottom: 10px; }
-    .nh-title-wrap h1 { font-size: 22px; }
-    .nh-title-wrap p { font-size: 12px; }
-    .nh-top-actions { width: 100%; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .nh-btn { padding: 11px 12px; font-size: 14px; }
-    .nh-stage-panel { padding: 10px; border-radius: 20px; }
-    .nh-stage-top { gap: 8px; margin-bottom: 10px; }
-    .nh-status-strip { gap: 6px; }
-    .nh-pill { padding: 6px 10px; font-size: 11px; }
+    .nh-root { padding: 6px 6px calc(8px + env(safe-area-inset-bottom)); }
+    .nh-shell { max-width: none; }
+    .nh-header { margin-bottom: 8px; }
+    .nh-title-wrap h1 { font-size: 20px; }
+    .nh-title-wrap p { display: none; }
+    .nh-top-actions { width: 100%; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    .nh-btn { padding: 10px 10px; font-size: 13px; border-radius: 12px; }
+    .nh-layout { gap: 10px; }
+    .nh-stage-panel { padding: 8px; border-radius: 18px; }
+    .nh-stage-top { gap: 6px; margin-bottom: 8px; }
+    .nh-status-strip { gap: 6px; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 2px; }
+    .nh-status-strip::-webkit-scrollbar { display: none; }
+    .nh-pill { padding: 6px 9px; font-size: 10px; white-space: nowrap; }
 
     .nh-table {
-      min-height: 700px;
-      border-radius: 24px;
-      box-shadow: inset 0 0 0 8px rgba(74, 36, 18, 0.68), inset 0 0 0 11px rgba(146, 93, 59, 0.20), 0 18px 30px rgba(0, 0, 0, 0.34);
+      min-height: 620px;
+      border-radius: 22px;
+      box-shadow: inset 0 0 0 7px rgba(74, 36, 18, 0.68), inset 0 0 0 10px rgba(146, 93, 59, 0.20), 0 16px 26px rgba(0, 0, 0, 0.34);
     }
-    .nh-table::before { inset: 10px; }
-    .nh-center { top: 46%; width: min(92%, 360px); gap: 10px; }
-    .nh-community { gap: 6px; min-height: 84px; }
-    .nh-card { width: 54px; height: 76px; border-radius: 12px; }
-    .nh-card.small { width: 46px; height: 64px; border-radius: 10px; }
-    .nh-card-corner { font-size: 12px; left: 6px; top: 5px; }
-    .nh-card-corner.bottom { right: 6px; bottom: 5px; }
-    .nh-card-suit { font-size: 24px; }
-    .nh-pot { min-width: 150px; padding: 10px 14px; border-radius: 18px; }
-    .nh-pot-value { font-size: 28px; }
-    .nh-winner-banner { padding: 10px 12px; font-size: 13px; }
+    .nh-table::before { inset: 9px; }
+    .nh-center { top: 47%; width: min(94%, 360px); gap: 8px; }
+    .nh-community { gap: 4px; min-height: 74px; }
+    .nh-card { width: 50px; height: 70px; border-radius: 11px; }
+    .nh-card.small { width: 40px; height: 56px; border-radius: 9px; }
+    .nh-card-corner { font-size: 11px; left: 5px; top: 4px; }
+    .nh-card-corner.bottom { right: 5px; bottom: 4px; }
+    .nh-card-suit { font-size: 21px; }
+    .nh-pot { min-width: 132px; padding: 8px 12px; border-radius: 16px; }
+    .nh-pot-label { font-size: 10px; }
+    .nh-pot-value { font-size: 24px; }
+    .nh-winner-banner { padding: 9px 10px; font-size: 12px; border-radius: 14px; }
 
-    .nh-seat { padding: 10px; width: auto; border-radius: 16px; }
-    .nh-seat-head { gap: 6px; align-items: flex-start; }
-    .nh-player-name { font-size: 12px; }
+    .nh-seat { padding: 8px; width: auto; border-radius: 14px; }
+    .nh-seat-head { gap: 4px; align-items: flex-start; }
+    .nh-player-name { font-size: 11px; }
     .nh-player-style { display: none; }
     .nh-role-badges { gap: 4px; }
-    .nh-role-badge { min-width: 28px; font-size: 10px; padding: 3px 6px; }
-    .nh-stack-row { margin-top: 8px; gap: 6px; font-size: 11px; }
-    .nh-pressure-bar { margin-top: 8px; height: 6px; }
-    .nh-cards { gap: 8px; margin-top: 8px; min-height: 64px; }
-    .nh-best-hand { margin-top: 6px; min-height: 14px; font-size: 10px; }
-    .nh-action-badge { right: 8px; bottom: 8px; font-size: 10px; padding: 5px 8px; }
+    .nh-role-badge { min-width: 24px; font-size: 9px; padding: 2px 5px; }
+    .nh-stack-row { margin-top: 6px; gap: 6px; font-size: 10px; }
+    .nh-pressure-bar { margin-top: 6px; height: 5px; }
+    .nh-cards { gap: 6px; margin-top: 7px; min-height: 56px; }
+    .nh-best-hand { margin-top: 5px; min-height: 12px; font-size: 9px; }
+    .nh-action-badge { right: 6px; bottom: 6px; font-size: 9px; padding: 4px 7px; }
 
-    .nh-seat.seat-2 { left: 10px; right: 10px; top: 10px; transform: none; width: auto; }
-    .nh-seat.seat-1 { left: 10px; top: 120px; transform: none; width: calc(50% - 15px); }
-    .nh-seat.seat-3 { right: 10px; top: 120px; transform: none; width: calc(50% - 15px); }
-    .nh-seat.seat-0 { left: 10px; right: 10px; bottom: 10px; transform: none; width: auto; }
+    .nh-seat.seat-2 { left: 8px; right: 8px; top: 8px; transform: none; width: auto; }
+    .nh-seat.seat-1 { left: 8px; top: 86px; transform: none; width: calc(50% - 12px); }
+    .nh-seat.seat-3 { right: 8px; top: 86px; transform: none; width: calc(50% - 12px); }
+    .nh-seat.seat-0 { left: 8px; right: 8px; bottom: 8px; transform: none; width: auto; }
 
-    .nh-seat.active.seat-0 { transform: scale(1.01); }
-    .nh-seat.active.seat-1 { transform: scale(1.01); transform-origin: left center; }
-    .nh-seat.active.seat-2 { transform: scale(1.01); }
-    .nh-seat.active.seat-3 { transform: scale(1.01); transform-origin: right center; }
+    .nh-seat.active.seat-0,
+    .nh-seat.active.seat-1,
+    .nh-seat.active.seat-2,
+    .nh-seat.active.seat-3 { transform: scale(1.01); }
 
-    .nh-control-panel { margin-top: 10px; gap: 10px; }
-    .nh-info-card, .nh-action-panel { padding: 12px; border-radius: 16px; }
-    .nh-info-card h3, .nh-action-panel h3 { font-size: 13px; margin-bottom: 6px; }
-    .nh-phase-copy, .nh-action-summary, .nh-footer-note { font-size: 12px; line-height: 1.55; }
-    .nh-action-grid, .nh-raise-presets { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .nh-preset { padding: 9px 8px; }
+    .nh-control-panel { margin-top: 8px; gap: 8px; position: sticky; bottom: 0; z-index: 12; }
+    .nh-info-card { display: none; }
+    .nh-action-panel {
+      padding: 10px;
+      border-radius: 16px;
+      background: rgba(8, 14, 25, 0.94);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 14px 24px rgba(0, 0, 0, 0.3);
+    }
+    .nh-action-panel h3 { display: none; }
+    .nh-phase-copy, .nh-action-summary { font-size: 11px; line-height: 1.45; }
+    .nh-action-summary { margin-top: 0; gap: 6px; }
+    .nh-action-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; margin-top: 8px; }
+    .nh-raise-presets { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; margin-top: 8px; }
+    .nh-preset { padding: 7px 4px; border-radius: 10px; font-size: 10px; line-height: 1.25; }
+    .nh-footer-note { display: none; }
 
     .nh-side-panel {
       position: sticky;
-      bottom: calc(8px + env(safe-area-inset-bottom));
-      z-index: 30;
-      max-height: 58px;
-      padding: 10px;
-      border-radius: 18px;
+      bottom: calc(6px + env(safe-area-inset-bottom));
+      z-index: 20;
+      max-height: 52px;
+      padding: 8px;
+      border-radius: 16px;
       overflow: hidden;
       transition: max-height 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
     }
     .nh-side-panel.open {
-      max-height: min(56vh, 420px);
+      max-height: min(42vh, 360px);
       border-color: rgba(132, 246, 224, 0.18);
       box-shadow: 0 18px 36px rgba(0, 0, 0, 0.36);
     }
     .nh-side-panel-head { margin-bottom: 0; }
-    .nh-side-panel.open .nh-side-panel-head { margin-bottom: 10px; }
+    .nh-side-panel.open .nh-side-panel-head { margin-bottom: 8px; }
     .nh-side-panel:not(.open) .nh-side-content { display: none; }
-    .nh-side-panel-close { padding: 8px 10px; font-size: 12px; }
-    .nh-tabs { margin-bottom: 0; }
-    .nh-side-panel.open .nh-tabs { margin-bottom: 10px; }
-    .nh-side-content { max-height: calc(min(56vh, 420px) - 86px); padding-right: 2px; }
-    .nh-rule-card, .nh-log-item { padding: 10px; margin-bottom: 8px; }
-    .nh-rule-card p, .nh-rule-card li, .nh-log-item, .nh-rank-row { font-size: 12px; }
+    .nh-side-panel-close { padding: 7px 9px; font-size: 11px; border-radius: 10px; }
+    .nh-tabs { margin-bottom: 0; gap: 6px; }
+    .nh-side-panel.open .nh-tabs { margin-bottom: 8px; }
+    .nh-tab { padding: 9px 10px; font-size: 12px; border-radius: 12px; }
+    .nh-side-content { max-height: calc(min(42vh, 360px) - 76px); padding-right: 2px; }
+    .nh-rule-card, .nh-log-item { padding: 9px; margin-bottom: 7px; border-radius: 12px; }
+    .nh-rule-card h4 { font-size: 12px; margin-bottom: 6px; }
+    .nh-rule-card p, .nh-rule-card li, .nh-log-item, .nh-rank-row { font-size: 11px; }
+    .nh-rank-row { padding: 7px 8px; gap: 8px; }
+
+    .nh-side-panel-head .nh-tabs { flex: 1; min-width: 0; }
+  }
+
+  @media (max-width: 430px) {
+    .nh-root { padding: 4px 4px calc(6px + env(safe-area-inset-bottom)); }
+    .nh-header { gap: 6px; }
+    .nh-title-wrap h1 { font-size: 18px; letter-spacing: 0.04em; }
+    .nh-top-actions { gap: 6px; }
+    .nh-stage-panel { padding: 6px; border-radius: 16px; }
+    .nh-table { min-height: 590px; }
+    .nh-center { top: 47%; width: calc(100% - 12px); }
+    .nh-community { gap: 3px; }
+    .nh-card { width: 46px; height: 64px; }
+    .nh-card.small { width: 36px; height: 50px; }
+    .nh-pot { min-width: 124px; }
+    .nh-seat.seat-1, .nh-seat.seat-3 { top: 82px; width: calc(50% - 11px); }
+    .nh-action-grid .nh-btn,
+    .nh-raise-presets .nh-preset { min-height: 44px; }
+    .nh-action-summary span:last-child { width: 100%; }
   }
 </style>
 </head>
@@ -797,9 +834,9 @@ render();
 '''
 
 st.title("NEON HOLD'EM")
-st.caption("iPhone 向けに縦長を圧縮したコンパクト版")
+st.caption("iPhoneで横幅を使いやすくしたゲームUI版")
 
-components.html(HTML, height=980, scrolling=True)
+components.html(HTML, height=860, scrolling=True)
 
 with st.expander("デプロイ手順メモ", expanded=False):
     st.markdown(
